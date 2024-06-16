@@ -101,10 +101,10 @@ def load(records, schema, table):
 
 with DAG(
     dag_id='load_exchange_v3',
-    start_date=datetime(2024, 1, 1),
+    start_date=datetime(2024, 6, 9),
     schedule='1 0 * * *',
     max_active_runs=1,
-    catchup=False,
+    catchup=True,
     default_args={
         'retries': 3,
         'retry_delay': timedelta(seconds=15)
